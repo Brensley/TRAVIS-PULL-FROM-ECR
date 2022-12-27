@@ -12,5 +12,5 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 # Pull the image
 docker pull aws_account_id.dkr.ecr.us-east-1.amazonaws.com/your-image-name:latest
 
-# Deploy the image using Travis-ci
+# Deploy the image using Travis-ci-
 travis deploy --com AWS_ECR --image aws_account_id.dkr.ecr.us-east-1.amazonaws.com/your-image-name:latest
