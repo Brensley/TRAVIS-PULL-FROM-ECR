@@ -1,17 +1,13 @@
-language: python
+
+language: bash
 
 services:
   - docker
 
 before_install:
+  - pip install --upgrade pip
   - pip install awscli
-
-install:
-  - $(aws ecr get-login --no-include-email --region us-east-1)
-  - docker pull 647269089792.dkr.ecr.us-east-1.amazonaws.com/my-image:latest
+  - aws configure set region us-east-2
 
 script:
-  - docker build -t imagetest .
-  - docker tag imagetest 647269089792.dkr.ecr.us-east-1.amazonaws.com/20221230155505-a9bb04859d25c483d39afee2e24a02bebed3ff6a:latest
-  - docker push 647269089792.dkr.ecr.us-east-1.amazonaws.com/20221230155505-a9bb04859d25c483d39afee2e24a02bebed3ff6a:latest
-
+  - bash pull.sh
