@@ -7,7 +7,7 @@ before_install:
   - pip install awscli
 
 install:
-  - docker build -t bfostertesting
+  - docker build -t bfostertesting .
 
 before_script:
   - $(aws ecr get-login --region us-east-2)
