@@ -1,0 +1,17 @@
+language: python
+
+services:
+  - docker
+
+before_install:
+  - pip install awscli
+
+install:
+  - docker build -t bfostertesting
+
+before_script:
+  - $(aws ecr get-login --region us-east-2)
+
+script:
+  - docker tag bfostertesting:latest 647269089792.dkr.ecr.us-east-1.amazonaws.com/bftesting:latest
+  - docker push 647269089792.dkr.ecr.us-east-1.amazonaws.com/bftesting:latest
