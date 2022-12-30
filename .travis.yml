@@ -10,4 +10,4 @@ before_install:
   - aws configure set region us-east-2
 
 script:
-  - bash pull.sh
+  - bash travispull.sh
