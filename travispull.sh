@@ -5,7 +5,7 @@
 
 # Install the AWS CLI and authenticate with AWS ECR
 pip install awscli
-$(aws ecr get-login --no-include-email --region us-east-1)
+$(aws ecr get-login --no-include-email --region us-east-2)
 
 # Pull the latest image from the AWS ECR repository
 docker pull m647269089792.dkr.ecr.us-east-1.amazonaws.com/my-image:latest
