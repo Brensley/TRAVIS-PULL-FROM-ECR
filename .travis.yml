@@ -9,5 +9,12 @@ before_install:
   - pip install awscli
   - aws configure set region us-east-2
 
+env:
+  global:
+  - EB_REGION="us-east-2"
+  - secure: secure_AWS_ACCOUNT_ID
+  - secure: secure_AWS_ACCESS_KEY_ID
+  - secure: secure_AWS_SECRET_ACCESS_KEY
+
 script:
   - bash travispull.sh

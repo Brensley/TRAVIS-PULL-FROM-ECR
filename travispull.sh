@@ -3,7 +3,7 @@
 #!/bin/bash
 
 # Login to AWS ECR
-$(aws ecr get-login --region us-east-2 --no-include-email)
+$(aws ecr get-login --no-include-email)
 
 # Set the repository URI and image tag
 REPO_URI=0647269089792.dkr.ecr.us-east-1.amazonaws.com/20221230155505-a9bb04859d25c483d39afee2e24a02bebed3ff6a=latest
