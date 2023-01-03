@@ -16,7 +16,7 @@ TASK_DEFINITION=task-def
 CLUSTER_NAME=bfcluster
 
 # Register the task definition
-aws ecs register-task-definition --cli-input-json file://task-definition.json
+aws ecs register-task-definition --cli-input-json file://task-def.json
 
 # Update the service with the new task definition
 aws ecs update-service --cluster $CLUSTER_NAME --service my-service --task-definition $TASK_DEFINITION
