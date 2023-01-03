@@ -12,8 +12,8 @@ REPO_URI=0647269089792.dkr.ecr.us-east-1.amazonaws.com/20221230155505-a9bb04859d
 docker pull $REPO_URI:$IMAGE_TAG
 
 # Set the task definition and cluster names
-TASK_DEFINITION=my-task-definition
-CLUSTER_NAME=my-ecs-cluster
+TASK_DEFINITION=task-def
+CLUSTER_NAME=bfcluster
 
 # Register the task definition
 aws ecs register-task-definition --cli-input-json file://task-definition.json
