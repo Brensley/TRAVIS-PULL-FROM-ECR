@@ -9,3 +9,10 @@ script:
   - bash scripts/create-ec2-instance.sh
   - bash scripts/wait-for-ec2-instance.sh
   - bash scripts/deploy-to-ec2.sh
+
+env:
+  global:
+  - EB_REGION="us-east-2"
+  - secure: secure_AWS_ACCOUNT_ID
+  - secure: secure_AWS_ACCESS_KEY_ID
+  - secure: secure_AWS_SECRET_ACCESS_KEY
