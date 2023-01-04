@@ -1,21 +1,11 @@
-
 language: bash
-
 services:
   - docker
-
 before_install:
-  - pip install --upgrade pip
-  - pip install awscli
-  - aws configure set region us-east-2
-  - aws configure set aws_access_key_id YOUR_ACCESS_KEY_ID
-  - aws configure set aws_secret_access_key YOUR_SECRET_ACCESS_KEY
-  - aws configure set default.region YOUR_DEFAULT_REGION
-  - aws configure set default.output json
-
-env:
-  global:
-  - EB_REGION="us-east-2"
-  
+  - bash scripts/install-aws-cli.sh
+  - bash scripts/login-to-ecr.sh
 script:
-  - bash travispull.sh
+  - bash scripts/build-and-push-image.sh
+  - bash scripts/create-ec2-instance.sh
+  - bash scripts/wait-for-ec2-instance.sh
+  - bash scripts/deploy-to-ec2.sh
