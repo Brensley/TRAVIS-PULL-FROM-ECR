@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Wait for the EC2 instance to be in a "running" state.
+# Wait for the EC2 instance to be in a "running" state..
 aws ec2 wait instance-running --instance-ids ec2-image
 
 # Get the public IP address of the EC2 instance.
